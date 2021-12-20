@@ -16,7 +16,6 @@ body
   background-color: var(--bg)
   color: var(--text)
   line-height: 1.5
-  max-width: 1440px
   margin: 0 auto
   position: relative
   font-kerning: normal
@@ -26,6 +25,10 @@ body
   min-height: 100vh
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
+  -webkit-overflow-scrolling: touch
+  max-width: 1440px
+  @media screen and (min-width: 1640px)
+    max-width: 1600px
 
 a
   text-decoration: none
@@ -117,14 +120,15 @@ hr
 .aside
   overflow-y: auto
   background: var(--bg)
-  padding: 1rem 1.5rem
   border-radius: 0.25rem
   align-self: start
   max-height: 80vh
   position: sticky
   z-index: 9999
-  top: 0.25rem
+  top: 0
+  padding: 1rem 0
   @media screen and (min-width: 42rem)
+    padding: 1rem 1.5rem
     top: 2.5rem
     margin-top: 1rem
     padding-top: 0
@@ -138,7 +142,7 @@ hr
     overflow: visible
   &_toggle
     padding: 1.5rem 0
-    margin: -1.5rem -0.5rem -1.5rem 0
+    margin: -1.5rem 0
     display: flex
     justify-content: space-between
     @media screen and (min-width: 42rem)
